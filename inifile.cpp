@@ -20,7 +20,7 @@ IniFile::IniFile(string filename)
     string line, current;
 
     regex section_test("\\[(.*?)\\]");
-    regex value_test("(\\w+)=([^\\+]+(?!\\+{3}))");
+    regex value_test("(\\w+)(\\s*)=([^\\+]+(?!\\+{3}))");
     regex comments("(;|#).*$");
 	
     inp.open(filename.c_str(), ios::in);
@@ -40,7 +40,7 @@ IniFile::IniFile(string filename)
 		   if (current == "") { current = "Global"; }
 		   string hold = result[1];
 		   transform(hold.begin(), hold.end(), hold.begin(), ::tolower); //makes property lowercase
-		   mapIniFile[current][hold] = result[2]; //adds properties under section
+		   mapIniFile[current][hold] = result[3]; //adds properties under section
 		}
 	    }	  
 	}
