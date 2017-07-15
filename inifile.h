@@ -1,3 +1,8 @@
+/*
+CPSC 323 Summer 2017
+Project 1
+Group Members: Abraham Ludlam, Qiyuan Liu, Elizabeth Nguyen
+*/
 #ifndef INIFILE_H_
 #define INIFILE_H_
 #include <string>
